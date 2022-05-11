@@ -2,14 +2,15 @@
 #include <WinSock2.h>
 #include <WS2tcpip.h>
 
-
-
 int main() {
 
 	std::cout << "\n=======================\n";
 	std::cout << "======= SERVER ========\n";
 	std::cout << "=======================\n\n";
 
+
+	//create socket
+	
 	SOCKET serverSocket, acceptSocket;
 
 	int port = 55555;
@@ -38,6 +39,8 @@ int main() {
 		std::cout << "[+] Socket() is OK!" << std::endl;
 	}
 
+	//bind socket
+
 	sockaddr_in service;
 	service.sin_family = AF_INET;
 	InetPton(AF_INET, L"127.0.0.1", &service.sin_addr.s_addr);
@@ -59,6 +62,8 @@ int main() {
 		std::cout << "[+] listen() is OK! Waiting for connections..." << std::endl;
 	}
 
+	//accept connections
+
 	acceptSocket = accept(serverSocket, NULL, NULL);
 	if (acceptSocket == INVALID_SOCKET) {
 		std::cout << "[!] Invalid Socket -- Connection failed: " << WSAGetLastError() << std::endl;
@@ -68,7 +73,4 @@ int main() {
 	std::cout << "**Connection Accepted**" << std::endl;
 	system("pause");
 	WSACleanup();
-
-
-
 }
