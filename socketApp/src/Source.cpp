@@ -50,6 +50,23 @@ int main() {
 		std::cout << "**Can now send and recieve data!**\n\n" << std::endl;
 	}
 
+
+	while (true) {
+		char buffer[200];
+
+		std::cout << "Client-> ";
+		std::cin.getline(buffer, 200);
+
+		int byteCount = send(clientSocket, buffer, 200, 0);
+
+		byteCount = recv(clientSocket, buffer, 200, 0);
+		if (byteCount > 0) {
+			std::cout << "Server-> " << buffer << std::endl;
+		}
+		else WSACleanup();
+	}
+
+
 	system("pause");
 	WSACleanup();
 	return 0;

@@ -71,6 +71,26 @@ int main() {
 		return -1;
 	}
 	std::cout << "**Connection Accepted**" << std::endl;
+
+
+	while (true) {
+		char buffer[200];
+		char sendBuffer[200];
+
+		int byteCount = recv(acceptSocket, buffer, 200, 0);
+
+		if (byteCount > 0) {
+			std::cout << "Client-> " << buffer << std::endl;
+		}
+		else WSACleanup();
+
+		std::cout << "Server-> ";
+		std::cin.getline(sendBuffer, 200);
+
+		byteCount = send(acceptSocket, sendBuffer, 200, 0);
+	}
+
+
 	system("pause");
 	WSACleanup();
 }
