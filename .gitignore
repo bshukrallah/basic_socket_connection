@@ -1,5 +1,7 @@
 .vs/*
 socketApp/Debug/*
 socketApp/Release/*
+socketApp/x64/*
 socketServer/Debug/*
 socketServer/Release/*
+socketServer/x64/*
