@@ -1,7 +1,0 @@
-﻿  Server.cpp
-  Source.cpp
-  Generating Code...
-C:\Users\bshuk\source\repos\socketApp\socketServer\src\Server.cpp(32): warning C4715: 'chatServer::createSocket': not all control paths return a value
-C:\Users\bshuk\source\repos\socketApp\socketServer\src\Server.cpp(72): warning C4715: 'chatServer::acceptConnections': not all control paths return a value
-C:\Users\bshuk\source\repos\socketApp\socketServer\src\Server.cpp(50): warning C4715: 'chatServer::bindSocket': not all control paths return a value
-  socketServer.vcxproj -> C:\Users\bshuk\source\repos\socketApp\x64\Debug\socketServer.exe

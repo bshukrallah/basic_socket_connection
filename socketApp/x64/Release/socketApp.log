@@ -1,9 +1,0 @@
-﻿  Client.cpp
-  Source.cpp
-  Generating code
-  Previous IPDB not found, fall back to full compilation.
-C:\Users\bshuk\source\repos\socketApp\socketApp\src\Client.cpp(31): warning C4715: 'chatClient::createSocket': not all control paths return a value
-C:\Users\bshuk\source\repos\socketApp\socketApp\src\Client.cpp(53): warning C4715: 'chatClient::serverConnect': not all control paths return a value
-  All 161 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Finished generating code
-  socketApp.vcxproj -> C:\Users\bshuk\source\repos\socketApp\x64\Release\socketApp.exe
