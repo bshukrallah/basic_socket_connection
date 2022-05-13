@@ -39,8 +39,9 @@ int chatClient::serverConnect(std::string ipInput, int port)
 	InetPton(AF_INET, ipConvert.c_str(), &clientService.sin_addr.s_addr);
 	clientService.sin_port = htons(port);
 	if (connect(clientSocket, (SOCKADDR*)&clientService, sizeof(clientService)) == SOCKET_ERROR) {
+		system("Color 0C");
 		std::cout << "[!] Connection failed: " << WSAGetLastError() << std::endl;
-		std::cout << "Make sure server is running\n\n" << std::endl;
+		std::cout << "[!] Make sure server is running\n\n" << std::endl;
 		closesocket(clientSocket);
 		WSACleanup();
 		system("pause");
@@ -57,12 +58,9 @@ void chatClient::chatStream()
 	char buffer[200];
 	std::cout << "Client-> ";
 	std::cin.getline(buffer, 200);
-
 	int byteCount = send(clientSocket, buffer, 200, 0);
-
-	byteCount = recv(clientSocket, buffer, 200, 0);
-	if (byteCount > 0) {
-		std::cout << "Server-> " << buffer << std::endl;
-	}
-	else WSACleanup();
 };
+
+SOCKET chatClient::getSocket() {
+	return clientSocket;
+}

@@ -15,6 +15,7 @@ public:
 	void listeningService();
 	void chatStream();
 
+	SOCKET getSocket();
 
 private:
 

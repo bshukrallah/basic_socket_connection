@@ -15,6 +15,8 @@ public:
 
 	void chatStream();
 
+	SOCKET getSocket();
+
 private:
 
 	SOCKET clientSocket;
